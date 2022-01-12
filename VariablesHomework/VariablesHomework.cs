@@ -62,8 +62,7 @@ namespace VariablesHomework
 
             
             int z = i;
-            z = 25;
-            Assert.IsTrue(z == 25); // Make this pass
+            Assert.IsTrue(z == 100); // Make this pass
         }
 
         // Refer to this if you need help https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
