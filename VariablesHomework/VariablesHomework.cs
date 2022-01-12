@@ -8,50 +8,56 @@ namespace VariablesHomework
         [TestMethod]
         public void Declaration()
         {
-            Assert.IsTrue(25 == 25); // Make this pass
-            Assert.IsTrue(true == true); // Make this pass
-            Assert.IsTrue(99.9 == 99.9); // Make this pass
-            Assert.IsTrue(25.4 == 25.4); // Make this pass
-            Assert.IsTrue("I am a programmer now" == "I am a programmer now"); // Make this pass
-            Assert.IsTrue('z' == 'z'); // Make this pass
+            int number = 25;
+            Assert.IsTrue(number == 25); // Make this pass
+            bool boolean = true;
+            Assert.IsTrue(boolean == true); // Make this pass
+            double decimalValue = 99.9;
+            Assert.IsTrue(decimalValue == 99.9); // Make this pass
+            float floatingDecimalValue = 25.4f;
+            Assert.IsTrue(floatingDecimalValue == 25.4f); // Make this pass
+            string words = "I am a programmer now";
+            Assert.IsTrue( words == "I am a programmer now"); // Make this pass
+            char character = 'z';
+            Assert.IsTrue(character == 'z'); // Make this pass
         }
 
         [TestMethod]
         public void Assignment()
         {
-            int i = 0;
-            Assert.IsTrue(25 == 25); // Make this pass
+            int i = 25;
+            Assert.IsTrue(i == 25); // Make this pass
+            i = 100;
+            Assert.IsTrue(i == 100); // Then make this pass
 
-            Assert.IsTrue(100 == 100); // Then make this pass
+            float f = 3.5f;
+            Assert.IsTrue(f == 3.5f); // Make this pass
+            f = 99.9f;
+            Assert.IsTrue(f == 99.9f); // Then make this pass
 
-            float f = 0.0f;
-            Assert.IsTrue(3.5f == 3.5f); // Make this pass
-
-            Assert.IsTrue(f == 0); // Then make this pass
-
-            bool b = false;
-            Assert.IsTrue(!b); // Make this pass
-
+            bool b = true;
+            Assert.IsTrue(b); // Make this pass
+                 b = false;
             Assert.IsTrue(b == false); // Then make this pass
 
             double d = 10.0;
             Assert.IsTrue(d == 10.0); // Make this pass
-
-            Assert.IsTrue(d * 2 == 20.0); // Then make this pass
+                   d *= 2; 
+            Assert.IsTrue(d == 20.0); // Then make this pass
 
 
             string s = "word";
             Assert.IsTrue(s == "word"); // Make this pass
-            string o = "next";
-            Assert.IsTrue(o == "next"); // Then make this pass
+                   s = "next";
+            Assert.IsTrue(s == "next"); // Then make this pass
 
-            char c = 'a';
-            Assert.IsTrue(c == 'a'); // Make this pass
-            char e = 'c';
-            Assert.IsTrue(e == 'c'); // Then make this pass
+            char c = 'b';
+            Assert.IsTrue(c == 'b'); // Make this pass
+                 c = 'c';
+            Assert.IsTrue(c == 'c'); // Then make this pass
 
             int z = i;
-            Assert.IsTrue(z == i); // Make this pass
+            Assert.IsTrue(z == 100); // Make this pass
         }
 
         // Refer to this if you need help https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
@@ -85,25 +91,25 @@ namespace VariablesHomework
 
             int h = 23;
             h++;
-            Assert.IsTrue(h == 23); // Make this pass
+            Assert.IsTrue(h == 24); // Make this pass
             h--;
             Assert.IsTrue(h == 23); // Make this pass
             ++h;
             Assert.IsTrue(h == 24); // Make this pass
             --h;
-            Assert.IsTrue(h == 22); // Make this pass
+            Assert.IsTrue(h == 23); // Make this pass
             h += 1;
             Assert.IsTrue(h == 24); // Make this pass
             h -= 1;
-            Assert.IsTrue(h == 22); // Make this pass
+            Assert.IsTrue(h == 23); // Make this pass
 
             string l = "Hello! ";
             string m = l + "You!";
-            Assert.IsTrue(m == "Hello!You!"); // Make this pass
+            Assert.IsTrue(m == "Hello! You!"); // Make this pass
 
             int v = 5;
             int x = v % 4;
-            Assert.IsTrue(x == 2); // Make this pass
+            Assert.IsTrue(x == 1); // Make this pass
 
             int finalInt = 15;
             int divisionResult = 15 / 3;
@@ -134,12 +140,13 @@ namespace VariablesHomework
         {
             unchecked // ignore this, it simple means im telling the compiler i know what I am doing.
             {
-                Assert.IsTrue(int.MaxValue + 1 == 3147483646); // Make this pass
-                Assert.IsTrue(int.MinValue - 1 == -2147483649); // Make this pass
-                Assert.IsTrue(float.MaxValue + 1 == 3.402823467E+38); // Make this pass
-                Assert.IsTrue(float.MinValue - 1 == 1.175494352E-38); // Make this pass
-                Assert.IsTrue(double.MaxValue + 1 == 1.7976931348623158E+308); // Make this pass
-                Assert.IsTrue(double.MinValue - 1 == 2.2250738585072015E-308); // Make this pass
+                Assert.IsTrue(int.MaxValue + 1 == -2147483648); // Make this pass; this creates an overflow, but it doesn't create an overflow exception!
+                Assert.IsTrue(int.MinValue - 1 == 2147483647); // Make this pass
+                Assert.IsTrue(float.MaxValue + 1 == 3.4028235E+38); // Make this pass
+                Assert.IsTrue(float.MinValue - 1 == -3.4028235E+38); // Make this pass
+                Assert.IsTrue(double.MaxValue + 1 == 1.7976931348623157E+308); // Make this pass
+                Assert.IsTrue(double.MinValue - 1 == -1.7976931348623157E+308); // Make this pass
+
             }
         }
 
@@ -161,8 +168,8 @@ namespace VariablesHomework
         {
             // what am i doing here that make the above work?
             double d = 15.5;
-            double c = d;
-            Assert.IsTrue(c == d); // Make this pass
+            int c = (int)d;
+            Assert.IsTrue(c == 15); // Make this pass
 
             string e = d.ToString();
             Assert.IsTrue(e == "15.5"); // Make this pass
