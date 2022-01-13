@@ -140,12 +140,12 @@ namespace VariablesHomework
         {
             unchecked // ignore this, it simple means im telling the compiler i know what I am doing.
             {
-                Assert.IsTrue(int.MaxValue + 1 == -2147483648); // Make this pass; this creates an overflow, but it doesn't create an overflow exception!
-                Assert.IsTrue(int.MinValue - 1 == 2147483647); // Make this pass
-                Assert.IsTrue(float.MaxValue + 1 == 3.4028235E+38); // Make this pass
-                Assert.IsTrue(float.MinValue - 1 == -3.4028235E+38); // Make this pass
-                Assert.IsTrue(double.MaxValue + 1 == 1.7976931348623157E+308); // Make this pass
-                Assert.IsTrue(double.MinValue - 1 == -1.7976931348623157E+308); // Make this pass
+                Assert.IsTrue(int.MaxValue + 1 == int.MinValue); // Make this pass; this creates an overflow, but it doesn't create an overflow exception!
+                Assert.IsTrue(int.MinValue - 1 == int.MaxValue); // Make this pass
+                Assert.IsTrue(float.MaxValue + 1 == float.MaxValue); // Make this pass
+                Assert.IsTrue(float.MinValue - 1 == float.MinValue); // Make this pass
+                Assert.IsTrue(double.MaxValue + 1 == double.MaxValue); // Make this pass
+                Assert.IsTrue(double.MinValue - 1 == double.MinValue); // Make this pass
 
             }
         }
