@@ -113,34 +113,34 @@ namespace VariablesHomework
 
             string l = "Hello! ";
             string m = l + "You!";
-            Assert.IsTrue(m == /*Answer here*/); // Make this pass
+            Assert.IsTrue(m ==  "Hello! You!"/*Answer here*/); // Make this pass
 
             int v = 5;
             int x = v % 4;
-            Assert.IsTrue(x == /*Answer here*/); // Make this pass
+            Assert.IsTrue(x == 1 /*Answer here*/); // Make this pass
 
             int finalInt = 15;
             int divisionResult = 15 / 3;
-            Assert.IsTrue(divisionResult == /*Answer here*/); // Make this pass
+            Assert.IsTrue(divisionResult == 5/*Answer here*/); // Make this pass
 
             finalInt = 15;
             finalInt /= 3;
-            Assert.IsTrue(finalInt == /*Answer here*/); // Make this pass
+            Assert.IsTrue(finalInt == 5/*Answer here*/); // Make this pass
 
             int orderOfOperations = 2;
-            orderOfOperations = 2 + 12 * (orderOfOperations * 3);
-            Assert.IsTrue(orderOfOperations == /*Answer here*/); // Make this pass
+            orderOfOperations = 2 + 12 * (orderOfOperations * 3); // 2 + 12 * (2 * 3);
+            Assert.IsTrue(orderOfOperations == 74/*Answer here*/); // Make this pass
         }
 
         [TestMethod]
         public void Ranges()
         {
-            Assert.IsTrue(int.MaxValue == /*Answer here*/); // Make this pass
-            Assert.IsTrue(int.MinValue == /*Answer here*/); // Make this pass
-            Assert.IsTrue(float.MaxValue == /*Answer here*/); // Make this pass
-            Assert.IsTrue(float.MinValue == /*Answer here*/); // Make this pass
-            Assert.IsTrue(double.MaxValue == /*Answer here*/); // Make this pass
-            Assert.IsTrue(double.MinValue == /*Answer here*/); // Make this pass
+            Assert.IsTrue(int.MaxValue == 2147483647/*Answer here*/); // Make this pass
+            Assert.IsTrue(int.MinValue == 2147483648/*Answer here*/); // Make this pass
+            Assert.IsTrue(float.MaxValue == 3.40282347E+38f/*Answer here*/); // Make this pass
+            Assert.IsTrue(float.MinValue == -3.40282347E+38f/*Answer here*/); // Make this pass
+            Assert.IsTrue(double.MaxValue == 1.7976931348623157E+308/*Answer here*/); // Make this pass
+            Assert.IsTrue(double.MinValue == -1.7976931348623157E+308/*Answer here*/); // Make this pass
         }
 
         [TestMethod]
@@ -148,12 +148,12 @@ namespace VariablesHomework
         {
             unchecked // ignore this, it simple means im telling the compiler i know what I am doing.
             {
-                Assert.IsTrue(int.MaxValue + 1 == /*Answer here*/); // Make this pass
-                Assert.IsTrue(int.MinValue - 1 == /*Answer here*/); // Make this pass
-                Assert.IsTrue(float.MaxValue + 1 == /*Answer here*/); // Make this pass
-                Assert.IsTrue(float.MinValue - 1 == /*Answer here*/); // Make this pass
-                Assert.IsTrue(double.MaxValue + 1 == /*Answer here*/); // Make this pass
-                Assert.IsTrue(double.MinValue - 1 == /*Answer here*/); // Make this pass
+                Assert.IsTrue(int.MaxValue + 1 == 2147483648/*Answer here*/); // Make this pass
+                Assert.IsTrue(int.MinValue - 1 == -2147483647/*Answer here*/); // Make this pass
+                Assert.IsTrue(float.MaxValue + 1 == 3.40282347E+38f/*Answer here*/); // Make this pass
+                Assert.IsTrue(float.MinValue - 1 == -3.40282347E+38f/*Answer here*/); // Make this pass
+                Assert.IsTrue(double.MaxValue + 1 == 1.7976931348623157E+308/*Answer here*/); // Make this pass
+                Assert.IsTrue(double.MinValue - 1 == -1.7976931348623157E+308/*Answer here*/); // Make this pass
             }
         }
 
@@ -162,9 +162,9 @@ namespace VariablesHomework
         {
             int i = 13;
             double d = i;
-            Assert.IsTrue(d == /*Answer here*/); // Make this pass
+            Assert.IsTrue(d == 13/*Answer here*/); // Make this pass
 
-            // Why does that compile andwork but this doesnt?
+            // Why does that compile and work but this doesnt?
             // double d = 15.5;
             // int c = d;
         }
@@ -174,11 +174,11 @@ namespace VariablesHomework
         {
             // what am i doing here that make the above work?
             double d = 15.5;
-            int c = (int)d;
-            Assert.IsTrue(c == /*Answer here*/); // Make this pass
+            int c = (int)d; //converts double (decimal) value into integer (whole number) value // decimal casting pass the integer
+            Assert.IsTrue(c == 15/*Answer here*/); // Make this pass
 
-            string e = d.ToString();
-            Assert.IsTrue(e == /*Answer here*/); // Make this pass
+            string e = d.ToString(); // d = 15.5 
+            Assert.IsTrue(e == "15.5"/*Answer here*/); // Make this pass
         }
 
         [TestMethod]
@@ -186,7 +186,7 @@ namespace VariablesHomework
         {
             string a = "67";
             int b = int.Parse(a);
-            Assert.IsTrue(b == /*Answer here*/); // Make this pass
+            Assert.IsTrue(b == 67/*Answer here*/); // Make this pass
         }
     }
 }
