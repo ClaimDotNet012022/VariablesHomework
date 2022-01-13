@@ -8,6 +8,13 @@ namespace VariablesHomework
         [TestMethod]
         public void Declaration()
         {
+            int number = 25;
+            bool boolean = true;
+            double decimalValue = 99.9;
+            float floatingDecimalValue = 25.4f;
+            string words = "I am a programmer now";
+            char character = 'z';
+
             Assert.IsTrue(number == 25); // Make this pass
             Assert.IsTrue(boolean == true); // Make this pass
             Assert.IsTrue(decimalValue == 99.9); // Make this pass
@@ -19,39 +26,44 @@ namespace VariablesHomework
         [TestMethod]
         public void Assignment()
         {
-            int i = 0;
+            int i = 25;
             Assert.IsTrue(i == 25); // Make this pass
 
+            i = 100;
             Assert.IsTrue(i == 100); // Then make this pass
 
-            float f = 0.0f;
+            float f = 3.5f;
             Assert.IsTrue(f == 3.5); // Make this pass
 
+            f = 99.9f;
             Assert.IsTrue(f == 99.9); // Then make this pass
 
-            bool b = false;
+            bool b = true;
             Assert.IsTrue(b); // Make this pass
 
+            b = false;
             Assert.IsTrue(b == false); // Then make this pass
 
-            double d = 0.0;
+            double d = 10.0;
             Assert.IsTrue(d == 10.0); // Make this pass
 
+            d = 20.0; 
             Assert.IsTrue(d == 20.0); // Then make this pass
 
-
-            string s = "";
+            string s = "word";
             Assert.IsTrue(s == "word"); // Make this pass
 
+            s = "next";
             Assert.IsTrue(s == "next"); // Then make this pass
 
-            char c = 'a';
+            char c = 'b';
             Assert.IsTrue(c == 'b'); // Make this pass
 
+            c = 'c';
             Assert.IsTrue(c == 'c'); // Then make this pass
 
             int z = i;
-            Assert.IsTrue(z == /*Answer here*/); // Make this pass
+            Assert.IsTrue(z == i/*Answer here*/); // Make this pass
         }
 
         // Refer to this if you need help https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
@@ -60,42 +72,44 @@ namespace VariablesHomework
         {
             int a = 0;
             int b = a + 13; 
-            Assert.IsTrue(b == /*Answer here*/); // Make this pass
+            Assert.IsTrue(b == 13/*Answer here*/); // Make this pass
 
             float f = 12.3f;
             float c = f - 7.43f;
-            Assert.IsTrue(c == /*Answer here*/); // Make this pass
-            Assert.IsTrue(f == /*Answer here*/); // Make this pass
+            Assert.IsTrue(c == 12.3f - 7.43f /*Answer here*/); // Make this pass
+            Assert.IsTrue(f == 12.3f /*Answer here*/); // Make this pass
 
             bool d = false;
-            bool e = !d;
-            Assert.IsTrue(e == /*Answer here*/); // Make this pass
+            bool e = !d; // !d = true;
+            Assert.IsTrue(e == true); // Make this pass
 
             int anotherInt = 12;
-            int g = -anotherInt; 
-            Assert.IsTrue(g == /*Answer here*/); // Make this pass
+            int g = -anotherInt; // -12
+            Assert.IsTrue(g == -12 /*Answer here*/); // Make this pass
 
             int yetAnotherInt = 23456;
             int t = yetAnotherInt * 3;
-            Assert.IsTrue(t == /*Answer here*/); // Make this pass
+            Assert.IsTrue(t == 23456* 3 /*Answer here*/); // Make this pass
 
             int z = 23456;
-            z *= 3;
-            Assert.IsTrue(z == /*Answer here*/); // Make this pass
+            z *= 3; // z = z * 3
+            Assert.IsTrue(z == 23456 * 3/*Answer here*/); // Make this pass
 
             int h = 23;
             h++;
-            Assert.IsTrue(h == /*Answer here*/); // Make this pass
+            Assert.IsTrue(h == 24/*Answer here*/); // Make this pass
+
             h--;
-            Assert.IsTrue(h == /*Answer here*/); // Make this pass
+            Assert.IsTrue(h == 23/*Answer here*/); // Make this pass
+
             ++h;
-            Assert.IsTrue(h == /*Answer here*/); // Make this pass
+            Assert.IsTrue(h == 24/*Answer here*/); // Make this pass
             --h;
-            Assert.IsTrue(h == /*Answer here*/); // Make this pass
+            Assert.IsTrue(h == 23/*Answer here*/); // Make this pass
             h += 1;
-            Assert.IsTrue(h == /*Answer here*/); // Make this pass
+            Assert.IsTrue(h == 24/*Answer here*/); // Make this pass
             h -= 1;
-            Assert.IsTrue(h == /*Answer here*/); // Make this pass
+            Assert.IsTrue(h == 23/*Answer here*/); // Make this pass
 
             string l = "Hello! ";
             string m = l + "You!";
